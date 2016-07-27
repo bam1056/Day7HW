@@ -83,7 +83,7 @@ console.assert(findLongestWord("dont mess with Texas") === 'Texas')
  */
 
  const GCD = (a,b) => {
-   if (!b){
+   if (b === 0){
      return a
    }
    return GCD(b, a % b)
