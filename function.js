@@ -73,33 +73,35 @@ const findLongestWord = (sentence) => {
 console.assert(findLongestWord('book dogs') === 'book')
 console.assert(findLongestWord("dont mess with Texas") === 'Texas')
 
-// /*
-//  * --- ADVENTURE MODE ---
-//  */
-//
-// /*
-//  * Write a function that finds the Greatest Common Denominator of two numbers
-//  * - if no GCD exists, return 1
-//  */
-//
-// const GCD = (a, b) => {
-//   // YOUR CODE HERE
-// }
-//
-// console.assert(GCD(5, 1) === 1)
-// console.assert(GCD(15, 3) === 3)
-// console.assert(GCD(15, 5) === 5)
-// console.assert(GCD(50, 20) === 10)
-//
-// /*
+/*
+ * --- ADVENTURE MODE ---
+ */
+
+/*
+ * Write a function that finds the Greatest Common Denominator of two numbers
+ * - if no GCD exists, return 1
+ */
+
+ const GCD = (a,b) => {
+   if (!b){
+     return a
+   }
+   return GCD(b, a % b)
+ }
+console.assert(GCD(5, 1) === 1)
+console.assert(GCD(15, 3) === 3)
+console.assert(GCD(15, 5) === 5)
+console.assert(GCD(50, 20) === 10)
+
+/*
 //  * Write a function that prints out the Least Common Multiple of two numbers
 //  */
 //
-// const LCM = (a, b) => {
-//   // YOUR CODE HERE
-// }
-//
-// console.assert(LCM(10, 10) === 10)
-// console.assert(LCM(2, 5) === 10)
-// console.assert(LCM(3, 6) === 6)
-// console.assert(LCM(0, 1) === 1)
+const LCM = (a, b) => {
+  return( (a * b) / GCD(a, b) )
+}
+
+console.assert(LCM(10, 10) === 10)
+console.assert(LCM(2, 5) === 10)
+console.assert(LCM(3, 6) === 6)
+console.assert(LCM(0, 1) === 0)
